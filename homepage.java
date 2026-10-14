@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class homepage extends JFrame {
-	public LoginPage() {
+	public homepage() {
 		// Set BorderLayout with horizontal gap 5 and vertical gap 10
 		setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
 		add(new JLabel("Create an account"), BorderLayout.CENTER);

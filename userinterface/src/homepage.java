@@ -11,7 +11,7 @@ public class homepage extends JFrame {
 		
 	}
 	public static void main(String[] args){
-		LoginPage frame = new LoginPage();
+		homepage frame = new homepage();
 		frame.setTitle("Border Layout");
 		frame.setSize(300, 200);
 		frame.setLocationRelativeTo(null); //Center the frame

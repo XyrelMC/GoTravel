@@ -1,6 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.*;
+
 
 public class homepage extends JFrame {
 	public homepage() {

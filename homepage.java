@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class LoginPage extends JFrame {
+public class homepage extends JFrame {
 	public LoginPage() {
 		// Set BorderLayout with horizontal gap 5 and vertical gap 10
 		setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));

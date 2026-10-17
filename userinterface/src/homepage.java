@@ -69,7 +69,8 @@ public class homepage extends JFrame {
 	public static void main(String[] args) {
 		homepage frame = new homepage();
 		frame.setTitle("StayDirect - Home");
-		frame.setSize(400, 700);
+		frame.setSize(450, 1000);
+		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);

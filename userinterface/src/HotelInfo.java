@@ -152,7 +152,7 @@ public class HotelInfo extends JFrame {
         panel.add(location);
         panel.add(desc);
         content.add(panel);
-        content.add(review);
+        content.add(review);	
         content.add(gallery);
         content.add(description);
         content.add(amenities);

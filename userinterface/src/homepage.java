@@ -3,9 +3,9 @@ import javax.swing.*;
 
 
 public class homepage extends JFrame {
-	public homepage() {
+	public homepage(String string) {
 		// Set BorderLayout with horizontal gap 5 and vertical gap 10
-		setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
+		setLayout(new BorderLayout((5,10), BoxLayout.PAGE_AXIS));
 		add(new JLabel("Create an account"), BorderLayout.CENTER);
 		add(new JLabel("Enter your email to sign up for this app"), BorderLayout.CENTER);
 		

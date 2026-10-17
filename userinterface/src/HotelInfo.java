@@ -18,12 +18,18 @@ public class HotelInfo extends JFrame {
     
     private static ImageIcon circlex = new ImageIcon(new ImageIcon("src/circlex.png")
     		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    
     private static ImageIcon gymIcon = new ImageIcon(new ImageIcon("src/gym.png")
     		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    
     private static ImageIcon parkingIcon = new ImageIcon(new ImageIcon("src/parking.png")
     		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    
     private static ImageIcon restaurantIcon = new ImageIcon(new ImageIcon("src/restaurant.png")
     		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    
+    private static ImageIcon roomIcon = new ImageIcon(new ImageIcon("src/room.png")
+    		.getImage().getScaledInstance(420,150, Image.SCALE_SMOOTH));
             	
     
 
@@ -53,7 +59,7 @@ public class HotelInfo extends JFrame {
         
         JLabel blank = new JLabel("    ");
         
-        JLabel revlabel2 = new JLabel("   Uhud Center");
+        JLabel revlabel2 = new JLabel("       Uhud Center");
         revlabel2.setFont(new Font("Inter", Font.PLAIN, 15));
        
 
@@ -90,7 +96,7 @@ public class HotelInfo extends JFrame {
         JLabel lblamenities = new JLabel("Main Amenities");
         lblamenities.setFont(new Font("Inter", Font.BOLD, 20));
         amenities.add(lblamenities);
-        JPanel amenrow1 = new JPanel(new GridLayout(0,6,-20,-10));
+        JPanel amenrow1 = new JPanel(new GridLayout(0,6,-14,-10));
         amenrow1.setBackground(new Color(242, 242, 247));
         amenrow1.add(new JLabel(wifiIcon));
         amenrow1.add(new JLabel("Free Wifi"));
@@ -101,7 +107,7 @@ public class HotelInfo extends JFrame {
         
         amenities.add(amenrow1);
         
-        JPanel amenrow2 = new JPanel(new GridLayout(0,6,-20,-10));
+        JPanel amenrow2 = new JPanel(new GridLayout(0,6,-30,-10));
         amenrow2.setBackground(new Color(242, 242, 247));
         amenrow2.add(new JLabel(restaurantIcon));
         amenrow2.add(new JLabel("Restaurant"));
@@ -113,6 +119,35 @@ public class HotelInfo extends JFrame {
         
         amenities.add(amenrow2);
         
+        JPanel roombooking = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        roombooking.setBackground(new Color(255, 255, 255));
+        roombooking.setPreferredSize(new Dimension(420,250));
+        roombooking.add(new JLabel(roomIcon));
+        JPanel roomdesc = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 0));
+        JLabel roomname = new JLabel("Panoramic Forest View King Suite");
+        roomdesc.setBackground(new Color(255, 255, 255));
+        roomdesc.setPreferredSize(new Dimension(320,250));
+        roomname.setFont(new Font("Inter", Font.BOLD, 17));
+        JLabel roomcont = new JLabel("1 Extra-large double bed - Private Balcony");
+        roomcont.setForeground(Color.LIGHT_GRAY);
+        roomcont.setFont(new Font("Inter", Font.PLAIN, 10));
+        JLabel roomperks = new JLabel("Free Cancellation - Breakfast Included");
+        roomperks.setFont(new Font("Inter", Font.BOLD, 14));
+        roomperks.setForeground(new Color (0, 153, 0));
+        roomdesc.add(roomname);
+        roomdesc.add(roomcont);
+        roomdesc.add(blank);
+        roomdesc.add(blank);
+        roomdesc.add(blank);
+        roomdesc.add(blank);
+        roomdesc.add(blank);
+        roomdesc.add(blank);
+        roomdesc.add(roomperks);
+        roomdesc.add(new JLabel("From RM 240/night"));
+        roombooking.add(roomdesc);
+  
+        
+        
         panel.add(name);
         panel.add(location);
         panel.add(desc);
@@ -121,7 +156,8 @@ public class HotelInfo extends JFrame {
         content.add(gallery);
         content.add(description);
         content.add(amenities);
-        content.setPreferredSize(new Dimension(450, 1200));
+        content.add(roombooking);
+        content.setPreferredSize(new Dimension(450, 2000));
 
         JScrollPane scrollPane = new JScrollPane(content,
                 JScrollPane.VERTICAL_SCROLLBAR_NEVER,

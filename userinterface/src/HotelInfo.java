@@ -18,6 +18,12 @@ public class HotelInfo extends JFrame {
     
     private static ImageIcon circlex = new ImageIcon(new ImageIcon("src/circlex.png")
     		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    private static ImageIcon gymIcon = new ImageIcon(new ImageIcon("src/gym.png")
+    		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    private static ImageIcon parkingIcon = new ImageIcon(new ImageIcon("src/parking.png")
+    		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
+    private static ImageIcon restaurantIcon = new ImageIcon(new ImageIcon("src/restaurant.png")
+    		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
             	
     
 
@@ -95,7 +101,17 @@ public class HotelInfo extends JFrame {
         
         amenities.add(amenrow1);
         
+        JPanel amenrow2 = new JPanel(new GridLayout(0,6,-20,-10));
+        amenrow2.setBackground(new Color(242, 242, 247));
+        amenrow2.add(new JLabel(restaurantIcon));
+        amenrow2.add(new JLabel("Restaurant"));
+        amenrow2.add(new JLabel(gymIcon));
+        amenrow2.add(new JLabel("Fitness Center"));
+        amenrow2.add(new JLabel(parkingIcon));
+        amenrow2.add(new JLabel("Free Parking"));
         
+        
+        amenities.add(amenrow2);
         
         panel.add(name);
         panel.add(location);

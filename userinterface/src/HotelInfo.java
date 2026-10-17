@@ -12,6 +12,12 @@ public class HotelInfo extends JFrame {
     
     private static ImageIcon galleryIcon = new ImageIcon(new ImageIcon("src/gallery.png")
     		.getImage().getScaledInstance(450,100, Image.SCALE_SMOOTH));
+    
+    private static ImageIcon wifiIcon = new ImageIcon(new ImageIcon("src/wifi.png")
+    		.getImage().getScaledInstance(25,20, Image.SCALE_SMOOTH));
+    
+    private static ImageIcon circlex = new ImageIcon(new ImageIcon("src/circlex.png")
+    		.getImage().getScaledInstance(20,20, Image.SCALE_SMOOTH));
             	
     
 
@@ -74,9 +80,20 @@ public class HotelInfo extends JFrame {
    
         JPanel amenities = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
         amenities.setBackground(new Color(242, 242, 247));
+        amenities.setPreferredSize(new Dimension(420,175));
         JLabel lblamenities = new JLabel("Main Amenities");
         lblamenities.setFont(new Font("Inter", Font.BOLD, 20));
         amenities.add(lblamenities);
+        JPanel amenrow1 = new JPanel(new GridLayout(0,6,-20,-10));
+        amenrow1.setBackground(new Color(242, 242, 247));
+        amenrow1.add(new JLabel(wifiIcon));
+        amenrow1.add(new JLabel("Free Wifi"));
+        amenrow1.add(new JLabel(circlex));
+        amenrow1.add(new JLabel("Infinity Pool"));
+        amenrow1.add(new JLabel(circlex));
+        amenrow1.add(new JLabel("Luxury Spa"));
+        
+        amenities.add(amenrow1);
         
         
         

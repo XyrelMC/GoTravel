@@ -8,13 +8,13 @@ import javax.swing.JEditorPane;
 public class HotelInfo extends JFrame {
 
     private static ImageIcon usIcon = new ImageIcon(
-        new ImageIcon("userinterface/src/x45-copy-web.jpg.pagespeed.ic.vEQDx7GsVj.jpg")
+        new ImageIcon("src/x45-copy-web.jpg.pagespeed.ic.vEQDx7GsVj.jpg")
             .getImage().getScaledInstance(450, 250, Image.SCALE_SMOOTH));
     
-    private static ImageIcon reviewIcon = new ImageIcon(new ImageIcon("userinterface/src/ninepointfour.png")
+    private static ImageIcon reviewIcon = new ImageIcon(new ImageIcon("src/ninepointfour.png")
     		.getImage().getScaledInstance(50,30, Image.SCALE_SMOOTH));
     
-    private static ImageIcon galleryIcon = new ImageIcon(new ImageIcon("userinterface/src/gallery.png")
+    private static ImageIcon galleryIcon = new ImageIcon(new ImageIcon("src/gallery.png")
     		.getImage().getScaledInstance(450,100, Image.SCALE_SMOOTH));
             	
     

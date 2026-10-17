@@ -1,9 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.*;
-import javax.swing.JEditorPane;
-
 
 public class HotelInfo extends JFrame {
 
@@ -76,6 +72,13 @@ public class HotelInfo extends JFrame {
         description.add(title);
         description.add(descriptor);
    
+        JPanel amenities = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        amenities.setBackground(new Color(242, 242, 247));
+        JLabel lblamenities = new JLabel("Main Amenities");
+        lblamenities.setFont(new Font("Inter", Font.BOLD, 20));
+        amenities.add(lblamenities);
+        
+        
         
         panel.add(name);
         panel.add(location);
@@ -84,6 +87,7 @@ public class HotelInfo extends JFrame {
         content.add(review);
         content.add(gallery);
         content.add(description);
+        content.add(amenities);
         content.setPreferredSize(new Dimension(450, 1200));
 
         JScrollPane scrollPane = new JScrollPane(content,

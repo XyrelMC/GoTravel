@@ -4,6 +4,7 @@
 /HotelInfo$1.class
 /booknow.png
 /callhotel.png
+<<<<<<< Updated upstream
 =======
 /parking.png
 /userinterface/
@@ -15,5 +16,21 @@
 /santorini.png
 /tokyo.png
 /JY.png
+<<<<<<< HEAD
 /AWSHotel.png
 /BWSHotel.png
+=======
+=======
+/locationpage.class
+>>>>>>> Stashed changes
+>>>>>>> 223278a70c5d295d229af61c4b2fa6e8c6e5e81c
+/bar.png
+/filterbtn.png
+/home.png
+/hotelpicture.png
+/idk.png
+/listings.png
+/map.png
+/notifications.png
+/profile.png
+/sortbtn.png

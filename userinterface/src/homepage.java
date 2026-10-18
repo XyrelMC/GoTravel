@@ -147,14 +147,15 @@ public class homepage extends JFrame {
 	public static void main(String[] args) {
 		homepage frame = new homepage();
 		frame.setTitle("StayDirect - Home");
-<<<<<<< Updated upstream
 		frame.setSize(450, 1000);
 		frame.setResizable(false);
-=======
+
 		frame.setSize(400, 780);
->>>>>>> Stashed changes
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}
 		frame.setVisible(true);
 	}
 }

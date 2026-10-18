@@ -21,7 +21,7 @@ public class homepage extends JFrame {
 		JPanel pHeader = new JPanel(new BorderLayout());
 		pHeader.setBackground(Color.WHITE);
 		pHeader.add(p1, BorderLayout.CENTER);
-		pHeader.add(new JLabel(new ImageIcon("/src/img/JY Avatar.png")), BorderLayout.EAST);
+		pHeader.add(new JLabel(new ImageIcon("/src/img/JY.png")), BorderLayout.EAST);
 		
 		JTextField jtfSearch = new JTextField("  Search destinations or hotels");
 		jtfSearch.setFont(new Font("SansSerif", Font.PLAIN, 16));
@@ -53,7 +53,7 @@ public class homepage extends JFrame {
 		p3.add(jlblPopular, BorderLayout.WEST);
 		p3.add(jlblAll, BorderLayout.EAST);
  
-		String[] places = {"bali", "tokyo", "paris", "santorini"};
+		String[] places = {"/src/img/bali.png", "/src/img/tokyo", "/src/img/paris", "/src/img/santorini"};
 		JPanel p4 = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
 		p4.setBackground(Color.WHITE);
 		for (int i = 0; i < 4; i++) {
@@ -73,7 +73,7 @@ public class homepage extends JFrame {
 		p5.add(jlblRec, BorderLayout.WEST);
 		p5.add(jlblDeals, BorderLayout.EAST);
  
-		String[] photos = {"hotel1", "hotel2"};
+		String[] photos = {"/src/img/AWSHotel", "/src/img/BWSHotel"};
 		String[] names = {"Alila Wilderness Sanctuary", "Bayview Wilderness Sanctuary"};
 		String[] ratings = {"9.4 Exceptional", "8.7 Very Good"};
 		String[] places2 = {"Ubud, Bali  -  2.1 km from center", "San Francisco, USA  -  1.3 km"};
@@ -146,7 +146,7 @@ public class homepage extends JFrame {
  
 	public static void main(String[] args) {
 		homepage frame = new homepage();
-		frame.setTitle("StayDirect - Home");
+		frame.setTitle("GoTravel - Home");
 		frame.setSize(450, 1000);
 		frame.setResizable(false);
 

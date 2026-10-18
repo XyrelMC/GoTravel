@@ -102,6 +102,10 @@ public class homepage extends JFrame {
 			JButton jbtDeal = new JButton("View Deal");
 			jbtDeal.setBackground(navy);
 			jbtDeal.setForeground(Color.WHITE);
+			jbtDeal.setBorderPainted(false);
+			jbtDeal.setOpaque(true);
+			jbtDeal.setContentAreaFilled(true);
+			jbtDeal.setFocusPainted(false);
 			JPanel pPrice = new JPanel(new BorderLayout());
 			pPrice.setBackground(Color.WHITE);
 			pPrice.add(jlblPrice, BorderLayout.WEST);

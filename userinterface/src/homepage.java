@@ -21,7 +21,7 @@ public class homepage extends JFrame {
 		JPanel pHeader = new JPanel(new BorderLayout());
 		pHeader.setBackground(Color.WHITE);
 		pHeader.add(p1, BorderLayout.CENTER);
-		pHeader.add(new JLabel(new ImageIcon("JY Avatar.png")), BorderLayout.EAST);
+		pHeader.add(new JLabel(new ImageIcon("/src/img/JY Avatar.png")), BorderLayout.EAST);
 		
 		JTextField jtfSearch = new JTextField("  Search destinations or hotels");
 		jtfSearch.setFont(new Font("SansSerif", Font.PLAIN, 16));

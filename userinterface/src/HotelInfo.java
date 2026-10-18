@@ -30,7 +30,16 @@ public class HotelInfo extends JFrame {
     
     private static ImageIcon roomIcon = new ImageIcon(new ImageIcon("src/room.png")
     		.getImage().getScaledInstance(420,150, Image.SCALE_SMOOTH));
-            	
+    
+    private static ImageIcon bookIcon = new ImageIcon(new ImageIcon("src/booknow.png")
+    		.getImage().getScaledInstance(135,45, Image.SCALE_SMOOTH));
+    
+    private static ImageIcon callIcon = new ImageIcon(new ImageIcon("src/callhotel.png")
+    		.getImage().getScaledInstance(135,45, Image.SCALE_SMOOTH));
+    
+
+    
+
     
 
     public HotelInfo() {
@@ -139,14 +148,85 @@ public class HotelInfo extends JFrame {
         roomdesc.add(blank);
         roomdesc.add(blank);
         roomdesc.add(blank);
-        roomdesc.add(blank);
-        roomdesc.add(blank);
-        roomdesc.add(blank);
         roomdesc.add(roomperks);
         roomdesc.add(new JLabel("From RM 240/night"));
         roombooking.add(roomdesc);
   
+        JPanel guestreview = new JPanel(new FlowLayout(FlowLayout.LEFT,0,10));
+        guestreview.setBackground(new Color(242, 242, 247));
+        guestreview.setPreferredSize(new Dimension(420,1000));
+        guestreview.add(new JLabel("Guest Reviews"));
+        JPanel guest1 = new JPanel();
+        guest1.setLayout(new BoxLayout(guest1, BoxLayout.Y_AXIS));
+        guest1.setBackground(Color.WHITE);
+        guest1.setPreferredSize(new Dimension(420,110));
+      
         
+        JLabel guestname1 = new JLabel("Marcus Ch'ng | 10");
+        JLabel date1 = new JLabel("Oct 12, 2024");
+        JLabel score1 = new JLabel("10");
+        JLabel review1 = new JLabel("<html><body style = 'width: 300px'>" + "The most breathtaking views I have ever experienced. The staff makes you feel at home with incredible attention to detail." + "</body></html>");
+        guest1.add(guestname1);  
+        guest1.add(date1);       
+        guest1.add(review1); 
+       
+        
+        JPanel guest2 = new JPanel();
+        guest2.setLayout(new BoxLayout(guest2, BoxLayout.Y_AXIS));
+        guest2.setBackground(Color.WHITE);
+        guest2.setPreferredSize(new Dimension(420,110));
+      
+        
+        JLabel guestname2 = new JLabel("Marcus Ch'ng | 10");
+        JLabel date2 = new JLabel("Oct 12, 2024");
+        JLabel score2 = new JLabel("10");
+        JLabel review2 = new JLabel("<html><body style = 'width: 300px'>" + "The most breathtaking views I have ever experienced. The staff makes you feel at home with incredible attention to detail." + "</body></html>");
+        guest2.add(guestname2);  
+        guest2.add(date2);        
+        guest2.add(review2); 
+        
+        
+        guestreview.add(guest1);
+        guestreview.add(guest2);
+        
+
+        
+        
+        JPanel callhotel = new JPanel (new FlowLayout(FlowLayout.RIGHT, 0, 0));
+        callhotel.setOpaque(false);
+        JButton jbtCall = new JButton("");
+        jbtCall.setIcon(callIcon);
+        jbtCall.setBorderPainted(false);
+        jbtCall.setOpaque(false);
+        jbtCall.setContentAreaFilled(true);
+        jbtCall.setFocusPainted(false);
+        callhotel.add(jbtCall);
+        
+        
+        JPanel footer = new JPanel(new BorderLayout());
+        footer.setPreferredSize(new Dimension(450,80));
+        footer.setBackground(Color.WHITE);
+        JLabel fromprice = new JLabel("   From\nRM 240 ");
+        fromprice.setFont(new Font("Inter", Font.BOLD, 15));
+        JLabel night = new JLabel("/night (incl. taxes)");
+        JButton jbtBook = new JButton("");
+        jbtBook.setIcon(bookIcon);
+        jbtBook.setBorderPainted(false);
+        jbtBook.setOpaque(true);
+        jbtBook.setContentAreaFilled(true);
+        jbtBook.setFocusPainted(false);
+        jbtBook.setBackground(Color.white);
+        jbtBook.setForeground(Color.WHITE);
+        night.setFont(new Font("Inter", Font.PLAIN, 12));
+        footer.add(fromprice, BorderLayout.WEST);
+        footer.add(night, BorderLayout.CENTER);
+        footer.add(jbtBook, BorderLayout.EAST);
+         // frame height minus footer
+
+       // top-right, same size as the button icon
+
+ 
+
         
         panel.add(name);
         panel.add(location);
@@ -157,18 +237,41 @@ public class HotelInfo extends JFrame {
         content.add(description);
         content.add(amenities);
         content.add(roombooking);
-        content.setPreferredSize(new Dimension(450, 2000));
+        content.add(guestreview);
+        content.setPreferredSize(new Dimension(450, 1550));
+  
 
         JScrollPane scrollPane = new JScrollPane(content,
                 JScrollPane.VERTICAL_SCROLLBAR_NEVER,
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setBorder(null);
+        scrollPane.getViewport().setScrollMode(JViewport.SIMPLE_SCROLL_MODE);
 
-        add(scrollPane, BorderLayout.CENTER);
+        JLayeredPane layered = new JLayeredPane();
+        layered.add(scrollPane, JLayeredPane.DEFAULT_LAYER);
+        layered.add(callhotel, JLayeredPane.PALETTE_LAYER);
+
+        // Size things whenever the layered pane gets its real size
+        layered.addComponentListener(new java.awt.event.ComponentAdapter() {
+            @Override
+            public void componentResized(java.awt.event.ComponentEvent e) {
+                int w = layered.getWidth();
+                int h = layered.getHeight();
+                scrollPane.setBounds(0, 0, w, h);
+                // bottom-right corner, sitting just above the footer
+                callhotel.setBounds(w - 145, h - 55, 135, 45);
+            }
+        });
+
+        add(layered, BorderLayout.CENTER);
+        add(footer, BorderLayout.SOUTH);
         setSize(450, 1000);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+
+       
     }
 
     public static void main(String[] args) {

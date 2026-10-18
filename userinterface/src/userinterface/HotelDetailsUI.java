@@ -47,8 +47,11 @@ public class HotelDetailsUI extends JFrame {
         scroll.getVerticalScrollBar().setUnitIncrement(16);
         add(scroll, BorderLayout.CENTER);
 
-        // SOUTH: price + Book Now
-        add(createBottomBar(), BorderLayout.SOUTH);
+        // SOUTH: contact buttons on top, price + Book Now underneath
+        JPanel south = new JPanel(new BorderLayout());
+        south.add(createContactButtons(), BorderLayout.NORTH);
+        south.add(createBottomBar(), BorderLayout.CENTER);
+        add(south, BorderLayout.SOUTH);
     }
 
     // =====================================================
@@ -214,6 +217,28 @@ public class HotelDetailsUI extends JFrame {
         return section;
     }
 
+    /** "Call hotel" and "Chat with hotel" buttons, aligned to the right. */
+    private JPanel createContactButtons() {
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 4));
+        panel.setBackground(Color.WHITE);
+
+        panel.add(makeContactButton("\u260E  Call hotel", green));
+        panel.add(makeContactButton("\u2709  Chat with hotel", orange));
+        return panel;
+    }
+
+    /** A small coloured button. */
+    private JButton makeContactButton(String text, Color colour) {
+        JButton button = new JButton(text);
+        button.setBackground(colour);
+        button.setForeground(Color.WHITE);
+        button.setFont(new Font("SansSerif", Font.BOLD, 11));
+        button.setOpaque(true);            // needed so the colour shows on macOS
+        button.setBorderPainted(false);    // needed so the colour shows on macOS
+        button.setFocusPainted(false);
+        return button;
+    }
+
     private JPanel createBottomBar() {
         JPanel bar = new JPanel(new BorderLayout());
         bar.setBackground(Color.WHITE);
@@ -296,7 +321,7 @@ public class HotelDetailsUI extends JFrame {
 
     public static void main(String[] args) {
         HotelDetailsUI frame = new HotelDetailsUI();
-        frame.setSize(400, 780);
+        frame.setSize(400, 820);
         frame.setLocationRelativeTo(null);   // center the frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
